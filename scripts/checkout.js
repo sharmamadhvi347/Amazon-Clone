@@ -102,7 +102,7 @@ document.querySelector('.js-order-summary')
 
 document.querySelectorAll('.js-delete-link')
 .forEach((link) => {
-    link.addEventListeners('click',() => {
+    link.addEventListener('click',() => {
         const productId = link.dataset.productId;
         removeFromCart(productId);
 
