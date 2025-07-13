@@ -26,9 +26,7 @@ cart.forEach((cartItem) => {
 
     let deliveryOption;
 
-    deliveryOption;
-
-    deliveryOption.forEach((option) => {
+    deliveryOptions.forEach((option) => {
         if(option.id === deliveryOptionId) {
             deliveryOption = option;
         }
@@ -36,7 +34,7 @@ cart.forEach((cartItem) => {
 
     const today =dayjs();
     const deliveryDate = today.add(
-        deliveryOptions.deliveryDays,
+        deliveryOption.deliveryDays,
         'days'
     );
     const dateString = deliveryDate.format(
@@ -102,7 +100,7 @@ deliveryOptions.forEach((deliveryOptions) => {
 
     const priceString = deliveryOptions.priceCents === 0
     ? 'FREE'
-    : $${formatCurrency(deliveryOptions.priceCents)};
+    : `$${formatCurrency(deliveryOptions.priceCents)}`;
 
     const isChecked = deliveryOptions.id === cartItem.deliveryOptionsId
 
@@ -137,7 +135,7 @@ document.querySelectorAll('.js-delete-link')
         removeFromCart(productId);
 
         const container = document.querySelector(
-            .js-cart-item-container-${productId}
+            `.js-cart-item-container-${productId}`
         );
         container.remove();
     });
