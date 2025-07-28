@@ -1,14 +1,14 @@
 class Cart{
     cartItems= undefined;
-    localStoragekey=undefined;
+    #localStoragekey=undefined;
 
     constructor(localStoragekey){
-        this.localStoragekey = localStoragekey;
-        this.loadFromStorage();
+        this.#localStoragekey = localStoragekey;
+        this.#loadFromStorage();
     }
 
-loadFromStorage= function(){
-this.cartItems = JSON.parse(localStorage.getItem(this.localStoragekey));
+#loadFromStorage(){
+this.cartItems = JSON.parse(localStorage.getItem(this.#localStoragekey));
 
 if (!this.cartItems) {
     this.cartItems =[{
@@ -26,7 +26,7 @@ if (!this.cartItems) {
 }
 
 saveToStorage() { //shorthand method for saveToStorage: function(){}
-    localStorage.setItem(this.localStoragekey, JSON.stringify(this.cartItems));
+    localStorage.setItem(this.#localStoragekey, JSON.stringify(this.cartItems));
 }
 
 addToCart(productId) {
