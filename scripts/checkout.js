@@ -42,7 +42,7 @@ Promise.all([
   renderOrderSummary();
   renderPaymentSummary();
 });
-
+*/
 
 /*
 new Promise((resolve) => {
